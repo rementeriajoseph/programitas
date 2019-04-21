@@ -1,0 +1,35 @@
+#------------------------------------------------------------------------------
+# A continuación se exponen los elementos generales que tiene un script de la 
+# un programa en el ISA especificado. Los "taps" son 4 espacios.
+# Se usó vim para editar este script.
+#
+# Adaptaciones de los códigos ensamblador de las páginas:
+#
+# https://learnxinyminutes.com/docs/mips/
+# https://ecs-network.serv.pacific.edu/ecpe-170/tutorials/mips-example-programs
+#
+# Autor: Joseph Rementería (b55824).
+#------------------------------------------------------------------------------
+# Sección de datos.
+.data
+    #--------------------------------------------------------------------------
+    # El formato es "<etiqueta> .<tipo> <valor>
+    # TODO: definir los tipos aceptados.
+    hello_string .ascii "Hello, World!"
+#------------------------------------------------------------------------------
+# Sección de código.
+.code
+    #--------------------------------------------------------------------------
+    # "main" es una etiqueta que siempre debe estar, se pueden agregar cuantas
+    # etiquestas se deseen despues de main.
+    main:
+        #----------------------------------------------------------------------
+        # Se asume addi tiene la estructura regDes, regOri, IMM.
+        addi    r3, r0, 5              # Carga un 5 a r3.
+        addi    r4, r0, 7              # Carga un 7 a r4.
+        #----------------------------------------------------------------------
+        # Se asume lo mismo con la instrucción add, sub, etc.
+        add     r5, r3, r4             # r5 := r3 + r4 = 5 + 7 = 12.
+        sub     r6, r3, r4             # r6 := r3 - r4 = 5 - 2 = -2.
+        jmp main                       # Sí, un loop infinito.
+#------------------------------------------------------------------------------
