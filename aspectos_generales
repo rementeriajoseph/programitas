@@ -33,3 +33,25 @@
         sub     r6, r3, r4             # r6 := r3 - r4 = 5 - 2 = -2.
         jmp main                       # Sí, un loop infinito.
 #------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+# Autor: Alejandro Chacon (B51867)
+# Imprimir un mensaje en pantalla
+#------------------------------------------------------------------------------
+# Datos 
+.data
+    fact .ascii "Antman will success against Thanos!"
+#------------------------------------------------------------------------------
+# Codigo
+.code
+    main: 
+        addi    r3, r0, (fact)         # Carga la direccion de la hilera 
+                                       # en el registro de param 
+                                       # ? aun no se como se va a apuntar
+        addi    r1, r0, 1              # Se carga el flag 1 para imprimir por pantalla
+        syscall                        # Llama la interrupcion y segun el flag realiza lo que se espera
+        jmp main
+#-------------------------------------------------------------------------------
+        
+        
+    
