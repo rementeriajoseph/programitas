@@ -7,12 +7,12 @@
 
 .code
     main:
-        sub     r9, sp, 32             # r9 := &n. Osea, se asume que en el 
-                                       # tope de la pila se deja el parámetro.
-        addi    r1, r0, 1              # r1 := resultado
-        addi    r2, r0, 2              # r2 := índice
+        add     r9, r0, r3             # r9 := n
+        addi    r2, r0, 1              # r2 := resultado
+        addi    r1, r0, 2              # r1 := índice
         ciclo:
-            mul     r1, r1, r2         # r1 := r1 * r2
-            addi    r2, r2, 1          # inc r2
-            jleu    r2, (r9), ciclo    # if (r2 <= n) then { jump to 'loop' }
+            mul     r2, r2, r1         # r1 := r1 * r2
+            addi    r1, r1, 1          # inc r2
+            jleu    r1, r9, ciclo      # si (r2 <= n) entonces { brincar a 'ciclo' }
+        # El resultado ya está en R2
         ret
