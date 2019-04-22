@@ -7,7 +7,8 @@
 
 .code
     main:
-        sub     r9, sp, 32             # r9 := &n
+        sub     r9, sp, 32             # r9 := &n. Osea, se asume que en el 
+                                       # tope de la pila se deja el parámetro.
         addi    r1, r0, 1              # r1 := resultado
         addi    r2, r0, 2              # r2 := índice
         ciclo:
