@@ -45,9 +45,9 @@
 # Codigo
 .code
     main: 
-        addi    r3, r0, (fact)         # Carga la direccion de la hilera 
-                                       # en el registro de param 
-                                       # ? aun no se como se va a apuntar
+        lux     r3, fact               # Load de la direccion de la variable fact
+                                       # Carga la direccion de la hilera 
+                                       # en el registro de parametro                                       
         addi    r1, r0, 1              # Se carga el flag 1 para imprimir por pantalla
         syscall                        # Llama la interrupcion y segun el flag realiza lo que se espera
         jmp main
