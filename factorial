@@ -1,0 +1,17 @@
+#------------------------------------------------------------------------------
+# Esta es una rutina en ensamblador que computa un factorial.
+#
+# Autor: Joseph Rementería (b55824).
+#------------------------------------------------------------------------------
+.data
+
+.code
+    main:
+        sub     r9, sp, 32             # r9 := &n
+        addi    r1, r0, 1              # r1 := resultado
+        addi    r2, r0, 2              # r2 := índice
+        ciclo:
+            mul     r1, r1, r2         # r1 := r1 * r2
+            addi    r2, r2, 1          # inc r2
+            jleu    r2, (r9), ciclo    # if (r2 <= n) then { jump to 'loop' }
+        ret
