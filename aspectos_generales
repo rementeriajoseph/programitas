@@ -7,6 +7,21 @@
 #
 # https://learnxinyminutes.com/docs/mips/
 # https://ecs-network.serv.pacific.edu/ecpe-170/tutorials/mips-example-programs
+#-------------------------------------------------------------------------------
+# A continuación se presenta una tabla con los syscalls definidos hasta ahora.
+#
+# Recopilador(es): 
+#
+# (1) Joseph Rementería (b55823)
+#
+#------------------------------------------------------------------------------
+# +-------+---------------------------+
+# |   1   | console out               |
+# +-------+---------------------------+
+# |   2   | console in                |
+# +-------+---------------------------+
+#
+#------------------------------------------------------------------------------
 #
 # Autor: Joseph Rementería (b55824).
 #------------------------------------------------------------------------------
@@ -51,22 +66,6 @@
         addi    r1, r0, 1              # Se carga el flag 1 para imprimir por pantalla
         syscall                        # Llama la interrupcion y segun el flag realiza lo que se espera
         jmp main
-#-------------------------------------------------------------------------------
-# A continuación se presenta una tabla con los syscalls definidos hasta ahora.
-#
-# Recopilador(es): 
-#
-# (1) Joseph Rementería (b55823)
-#
-#------------------------------------------------------------------------------
-# +-------+---------------------------+
-# |   1   | console out               |
-# +-------+---------------------------+
-# |   2   | console in                |
-# +-------+---------------------------+
-#
-#------------------------------------------------------------------------------
-
 
 #------------------------------------------------------------------------------
 # Autor: Kevin Jiménez (B59218)
